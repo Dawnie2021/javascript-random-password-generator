@@ -12,6 +12,9 @@ var generateBtn = document.querySelector("#generate");
 // added a function
 function generatePassword() {
 // all code goes here
+// added my first prompt
+var randomUser= prompt ('Please choose a password between 8 and 128 characters.');
+
 
 
 
