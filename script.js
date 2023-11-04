@@ -1,10 +1,10 @@
 
 // added variables for the things that will consist of a password
 // added an array called possibleCharacters
-// var numbersArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-// var lowercaseLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-// var uppercaseLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',];
-// var specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '?'];
+var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+var lowercaseLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+var uppercaseLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',];
+var specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '?'];
 var possible = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '?']
 
 // Assignment Code
@@ -12,6 +12,7 @@ var generateBtn = document.querySelector("#generate");
 
 // added a function
 function generatePassword() {
+
   // all code goes here
   // added my first prompt
   // added the rest of my prompts
@@ -33,11 +34,15 @@ function generatePassword() {
   var promptThree = prompt('Would you like to add uppercase letters?')
   var promptFour = prompt('Would you like to include lowercase letters?')
   var promptFive = prompt("Would you like to include numbers")
+// added another alert 
+  if (!promptTwo || promptThree || promptFour|| promptFive) {
+    alert("You must select at least one character type")
+  }
 // added another prompt
 
 
-  var atRandom = Math.floor(Math.random() * possible.length);
-  var display = possible[atRandom];
+  // var atRandom = Math.floor(Math.random() * possible.length);
+  // var display = possible[atRandom];
 
 
   // Returned something
@@ -56,4 +61,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword)
-generatePassword() 
