@@ -11,61 +11,36 @@ var possible = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c',
 var generateBtn = document.querySelector("#generate");
 
 // added a function
-function generatePassword() { 
-// all code goes here
-// added my first prompt
-// added the rest of my prompts
+function generatePassword() {
+  // all code goes here
+  // added my first prompt
+  // added the rest of my prompts
 
 
-var promptOne= prompt('Please choose a password between 8 and 128 characters.')
-// added an if else statment 
-// moved my alerts around
-if (promptOne.length > 8 && promptOne.length < 129) {
-  
-}
+  var promptOne = prompt('Please choose a password between 8 and 128 characters.')
+  // added an if else statment 
+  // moved my alerts around
+  if (promptOne > 8 && promptOne < 129) {
 
-else {
-  
-  alert("Password must be between 8 and 128 characters")
-}
-var promptTwo = prompt('Would you like to add special characters?')
-// // added an alert message
+  }
 
-var promptThree = prompt('Would you like to add uppercase letters?')
-var promptFour = prompt('Would you like to include lowercase letters?')
+  else {
 
-if (promptTwo >= 1) {
-  console.log(true);
-}
-else {
-  
-  alert("Password must contain at least one special character.")
-}
-
-var atRandom = Math.floor(Math.random() * possible.length);
-var display = possible[atRandom];
+    alert("Password must be between 8 and 128 characters")
+  }
+  var promptTwo = prompt('Would you like to add special characters?')
+  // // added an alert message
+  var promptThree = prompt('Would you like to add uppercase letters?')
+  var promptFour = prompt('Would you like to include lowercase letters?')
 
 
 
+  var atRandom = Math.floor(Math.random() * possible.length);
+  var display = possible[atRandom];
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Returned something
-return "Random Password Will Appear Here";
+  // Returned something
+  return "Random Password Will Appear Here";
 
 }
 
@@ -80,3 +55,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword)
+generatePassword() 
