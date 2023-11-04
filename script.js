@@ -22,11 +22,17 @@ function generatePassword() {
   if (promptOne >8 && promptOne <129) {
     console.log('true');
  } 
- if (promptOne<8 || promptOne >129) {
+ else {(promptOne<8 || promptOne >129) 
     alert("Password must be between 8 and 128 characters")
   }
+// added an alert message
+  if (promptTwo >=1) {
+    console.log(true);
+  }
     
-  
+  else { (promptTwo <1) 
+    alert("Password must contain at least one special character." )
+  }
 
 
 
