@@ -13,7 +13,11 @@ var generateBtn = document.querySelector("#generate");
 function generatePassword() {
 // all code goes here
 // added my first prompt
+// added the rest of my prompts
 var randomUser= prompt ('Please choose a password between 8 and 128 characters.');
+var randomUser= prompt ('Would you like to add special characters?')
+var randomUser= prompt ('Would you like to add uppercase letters?')
+var randomUser= prompt ('Would you like to include lowecase letters?')
 
 
 
