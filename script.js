@@ -32,7 +32,8 @@ function generatePassword() {
   // // added an alert message
   var promptThree = prompt('Would you like to add uppercase letters?')
   var promptFour = prompt('Would you like to include lowercase letters?')
-
+  var promptFive = prompt("Would you like to include numbers")
+// added another prompt
 
 
   var atRandom = Math.floor(Math.random() * possible.length);
