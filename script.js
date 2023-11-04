@@ -5,10 +5,23 @@ var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var lowercaseLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var uppercaseLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',];
 var specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '?'];
-var possible = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '?']
+var validCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '?']
+// changed var possible to valid characters
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
 
 // added a function
 function generatePassword() {
@@ -18,10 +31,10 @@ function generatePassword() {
   // added the rest of my prompts
 
 
-  var promptOne = prompt('Please choose a password between 8 and 128 characters.')
+  var passwordLength = prompt('Please choose a password between 8 and 128 characters.')
   // added an if else statment 
   // moved my alerts around
-  if (promptOne > 8 && promptOne < 129) {
+  if (passwordLength > 8 && passwordLength < 129) {
 
   }
 
@@ -40,24 +53,16 @@ function generatePassword() {
   }
 // added another prompt
 
+// added a for loop
+  for (var i = 0; i < passwordLength; i++) {
+    password+=validCharacters[Math.floor(Math.random() * validCharacters.length)]
+  }
 
-  // var atRandom = Math.floor(Math.random() * possible.length);
-  // var display = possible[atRandom];
+  return "password";
 
-
-  // Returned something
-  return "Random Password Will Appear Here";
-
+  
 }
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
 
-}
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword)
