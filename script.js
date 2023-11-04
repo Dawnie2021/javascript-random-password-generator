@@ -20,12 +20,12 @@ function generatePassword() {
 var promptOne= prompt('Please choose a password between 8 and 128 characters.')
 // added an if else statment 
 // moved my alerts around
-if (promptOne > 8 && promptOne < 129) {
+if (promptOne.length > 8 && promptOne.length < 129) {
   
 }
 
 else {
-  (promptOne < 8 || promptOne > 129)
+  
   alert("Password must be between 8 and 128 characters")
 }
 var promptTwo = prompt('Would you like to add special characters?')
@@ -34,13 +34,13 @@ var promptTwo = prompt('Would you like to add special characters?')
 var promptThree = prompt('Would you like to add uppercase letters?')
 var promptFour = prompt('Would you like to include lowercase letters?')
 
-// if (promptTwo >= 1) {
-//   console.log(true);
-// }
-// else {
-//   (promptTwo < 1)
-//   alert("Password must contain at least one special character.")
-// }
+if (promptTwo >= 1) {
+  console.log(true);
+}
+else {
+  
+  alert("Password must contain at least one special character.")
+}
 
 var atRandom = Math.floor(Math.random() * possible.length);
 var display = possible[atRandom];
