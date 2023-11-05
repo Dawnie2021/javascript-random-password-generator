@@ -29,7 +29,10 @@ function generatePassword() {
   // all code goes here
   // added my first prompt
   // added the rest of my prompts
-
+  // a collection of all the characters that will be included in the password
+validCharacters = []
+// empty string that will hold the password
+var password = ""
 
   var passwordLength = prompt('Password must be between 8 and 128 characters.')
   // added an if else statment 
@@ -52,18 +55,7 @@ function generatePassword() {
    else {
      alert("You must select at least one character type")
   }
-    
-  if (includeSpecialCharactersResponse) 
-  validCharacters = validCharacters.concat (specialCharacters)
- // includes lowercase letters if requested
-  if (includeLowercaseResponse)
-  validCharacters=validCharacters.concat (lowercaseLetters)
- // includes uppercase letters if requested
-  if (includeUppercaseResponse)
-  validCharacters = validCharacters.concat (uppercaseLetters)
- // includes numbers if requested
-  if (includeNumbers)
-  validCharacters = validCharacters.concat (numbers)
+
 // added a for loop
   for (var i = 0; i < passwordLength; i++) {
     password+=validCharacters[Math.floor(Math.random() * validCharacters.length)]
