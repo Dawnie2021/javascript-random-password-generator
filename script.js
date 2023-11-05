@@ -29,8 +29,7 @@ function generatePassword() {
   // all code goes here
   // added my first prompt
   // added the rest of my prompts
-  // a collection of all the characters that will be included in the password
-validCharacters = []
+  
 // empty string that will hold the password
 var password = ""
 
@@ -55,6 +54,7 @@ var password = ""
    else {
      alert("You must select at least one character type")
   }
+
 
 // added a for loop
   for (var i = 0; i < passwordLength; i++) {
