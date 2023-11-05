@@ -31,7 +31,7 @@ function generatePassword() {
   // added the rest of my prompts
 
 
-  var passwordLength = prompt('Please choose a password between 8 and 128 characters.')
+  var passwordLength = prompt('Password must be between 8 and 128 characters.')
   // added an if else statment 
   // moved my alerts around
   if (passwordLength > 8 && passwordLength < 129) {
@@ -42,27 +42,26 @@ function generatePassword() {
 
     alert("Password must be between 8 and 128 characters")
   }
-  var promptTwo = prompt('Would you like to add special characters?')
-  // // added an alert message
-  var promptThree = prompt('Would you like to add uppercase letters?')
-  var promptFour = prompt('Would you like to include lowercase letters?')
-  var promptFive = prompt("Would you like to include numbers")
-// added another alert 
-  if (!promptTwo || promptThree || promptFour|| promptFive) {
-    alert("You must select at least one character type")
-  }
-// added another prompt
-
+  var includeSpecialCharactersResponse = prompt('Would you like to add special characters?')
+  var includeUppercaseResponse = prompt('Would you like to add uppercase letters?')
+  var includeLowercaseResponse = prompt('Would you like to include lowercase letters?')
+  var includeNumbers = prompt("Would you like to include numbers")
+    
+  if (includeSpecialCharactersResponse) 
+  validCharacters = validCharacters.concat (specialCharacters)
+ // includes lowercase letters if requested
+  if (includeLowercaseResponse)
+  validCharacters=validCharacters.concat (lowercaseLetters)
+ // includes uppercase letters if requested
+  if (includeUppercaseResponse)
+  validCharacters = validCharacters.concat (uppercaseLetters)
+ // includes numbers if requested
+  if (includeNumbers)
+  validCharacters = validCharacters.concat (numbers)
 // added a for loop
   for (var i = 0; i < passwordLength; i++) {
     password+=validCharacters[Math.floor(Math.random() * validCharacters.length)]
   }
-
-  return "password";
-
-  
-}
-
-
-
+  return password;
+  }
 
