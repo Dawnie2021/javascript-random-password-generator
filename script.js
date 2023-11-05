@@ -46,6 +46,12 @@ function generatePassword() {
   var includeUppercaseResponse = prompt('Would you like to add uppercase letters?')
   var includeLowercaseResponse = prompt('Would you like to include lowercase letters?')
   var includeNumbers = prompt("Would you like to include numbers")
+// added an if else condition
+  if (includeSpecialCharactersResponse) {
+  }
+   else {
+     alert("You must select at least one character type")
+  }
     
   if (includeSpecialCharactersResponse) 
   validCharacters = validCharacters.concat (specialCharacters)
