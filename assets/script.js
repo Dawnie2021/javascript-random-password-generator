@@ -44,10 +44,11 @@ var password = ""
 
     alert("Password must be between 8 and 128 characters")
   }
-  var includeSpecialCharactersResponse = prompt('Would you like to add special characters?')
-  var includeUppercaseResponse = prompt('Would you like to add uppercase letters?')
-  var includeLowercaseResponse = prompt('Would you like to include lowercase letters?')
-  var includeNumbers = prompt("Would you like to include numbers")
+  // changed prompts to confirm
+  var includeSpecialCharactersResponse = confirm('Would you like to add special characters?')
+  var includeUppercaseResponse =confirm('Would you like to add uppercase letters?')
+  var includeLowercaseResponse =confirm('Would you like to include lowercase letters?')
+  var includeNumbers =confirm("Would you like to include numbers")
 // added an if else condition
   if (includeSpecialCharactersResponse) {
   }
