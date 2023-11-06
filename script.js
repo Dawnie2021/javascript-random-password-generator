@@ -56,6 +56,8 @@ var password = ""
   }
 
 
+
+
 // added a for loop
   for (var i = 0; i < passwordLength; i++) {
     password+=validCharacters[Math.floor(Math.random() * validCharacters.length)]
