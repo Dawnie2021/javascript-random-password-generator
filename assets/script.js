@@ -45,11 +45,11 @@ function generatePassword() {
 
     alert("Password must be between 8 and 128 characters")
   }
-  // changed prompts to confirm... changed back to prompts
-  var includeSpecialCharactersResponse = prompt('Would you like to add special characters?')
-  var includeUppercaseResponse = prompt('Would you like to add uppercase letters?')
-  var includeLowercaseResponse = prompt('Would you like to include lowercase letters?')
-  var includeNumbers = prompt("Would you like to include numbers?")
+  // changed back to confirm
+  var includeSpecialCharactersResponse = confirm('Would you like to add special characters?')
+  var includeUppercaseResponse = confirm('Would you like to add uppercase letters?')
+  var includeLowercaseResponse = confirm('Would you like to include lowercase letters?')
+  var includeNumbers = confirm("Would you like to include numbers?")
   // deleted if else condition
 
   // includes special characters if requested
