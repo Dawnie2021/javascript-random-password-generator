@@ -4,10 +4,10 @@
 var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var lowercaseLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var uppercaseLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',];
-var specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '?'];
-var validCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '?']
+var specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '?'];
+// var validCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '?']
 // changed var possible to valid characters
-
+ 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
@@ -29,14 +29,16 @@ function generatePassword() {
   // all code goes here
   // added my first prompt
   // added the rest of my prompts
-  
-// empty string that will hold the password
-var password = ""
+
+  // empty string that will hold the password
+  var password = ""
+  validCharacters = []
+  var displayText = ""
 
   var passwordLength = prompt('Password must be between 8 and 128 characters.')
   // added an if else statment 
   // moved my alerts around
-  if (passwordLength > 8 && passwordLength < 129) {
+  if (passwordLength >= 8 && passwordLength < 129) {
 
   }
 
@@ -46,23 +48,41 @@ var password = ""
   }
   // changed prompts to confirm
   var includeSpecialCharactersResponse = confirm('Would you like to add special characters?')
-  var includeUppercaseResponse =confirm('Would you like to add uppercase letters?')
-  var includeLowercaseResponse =confirm('Would you like to include lowercase letters?')
-  var includeNumbers =confirm("Would you like to include numbers")
-// added an if else condition
+  var includeUppercaseResponse = confirm('Would you like to add uppercase letters?')
+  var includeLowercaseResponse = confirm('Would you like to include lowercase letters?')
+  var includeNumbers = confirm("Would you like to include numbers")
+  // added an if else condition
   if (includeSpecialCharactersResponse) {
   }
-   else {
-     alert("You must select at least one character type")
+  else {
+    alert("You must select at least one  special character type")
   }
 
+  if (includeSpecialCharactersResponse)
+    validCharacters = validCharacters.concat(specialCharacters)
+
+  // include lowercase letters if requested
+  if (includeLowercaseResponse)
+    validCharacters = validCharacters.concat(lowercaseLetters)
+
+  // include uppercase letters if requested
+  if (includeUppercaseResponse)
+    validCharacters = validCharacters.concat(uppercaseLetters)
+
+  // include uppercase letters if requested
+  if (includeNumbers)
+    validCharacters = validCharacters.concat(numbers)
+
+  
 
 
 
-// added a for loop
+
+
+  // added a for loop
   for (var i = 0; i < passwordLength; i++) {
-    password+=validCharacters[Math.floor(Math.random() * validCharacters.length)]
+    password += validCharacters[Math.floor(Math.random() * validCharacters.length)]
   }
   return password;
-  }
+}
 
