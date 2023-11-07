@@ -1,6 +1,6 @@
 # javascript-random-password-generator
 
-## This is a random password generator built using Javascript functions, if-else conditions, prompts, and alerts.
+## This is a random password generator built using Javascript functions, if-else conditions, prompts, alerts, and a for loop. 
 
 ## Screenshot
 ![Alt text](assets/images/screenshot.png)

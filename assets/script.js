@@ -50,12 +50,8 @@ function generatePassword() {
   var includeUppercaseResponse = confirm('Would you like to add uppercase letters?')
   var includeLowercaseResponse = confirm('Would you like to include lowercase letters?')
   var includeNumbers = confirm("Would you like to include numbers?")
-  // added an if else condition
-  if (includeSpecialCharactersResponse) {
-  }
-  else {
-    alert("You must select at least one special character type")
-  }
+  // deleted if else condition
+  
 // includes special characterd if requested
   if (includeSpecialCharactersResponse)
     validCharacters = validCharacters.concat(specialCharacters)
@@ -72,8 +68,8 @@ function generatePassword() {
   if (includeNumbers)
     validCharacters = validCharacters.concat(numbers)
 // added an if statement
-  if (includeUppercaseResponse && includeLowercaseResponse && includeNumbers && !includeSpecialCharactersResponse) {
-    alert("please include special characters");
+  if (!includeUppercaseResponse && !includeLowercaseResponse && !includeNumbers && !includeSpecialCharactersResponse) {
+    alert("please select at least one character");
     
   }
 
