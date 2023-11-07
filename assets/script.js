@@ -33,8 +33,8 @@ function generatePassword() {
   // empty string that will hold the password
   var password = ""
   validCharacters = []
-
-  var passwordLength = prompt('Password must be between 8 and 128 characters.')
+// changed password length prompt
+  var passwordLength = prompt('How many characters would you like to include in your password? Must be between 8 and 128 characters.')
   // added an if else statment 
   // moved my alerts around
   if (passwordLength >= 8 && passwordLength < 129) {
@@ -49,7 +49,7 @@ function generatePassword() {
   var includeSpecialCharactersResponse = confirm('Would you like to add special characters?')
   var includeUppercaseResponse = confirm('Would you like to add uppercase letters?')
   var includeLowercaseResponse = confirm('Would you like to include lowercase letters?')
-  var includeNumbers = confirm("Would you like to include numbers")
+  var includeNumbers = confirm("Would you like to include numbers?")
   // added an if else condition
   if (includeSpecialCharactersResponse) {
   }
@@ -74,7 +74,7 @@ function generatePassword() {
 // added an if statement
   if (includeUppercaseResponse && includeLowercaseResponse && includeNumbers && !includeSpecialCharactersResponse) {
     alert("please include special characters");
-    return null;
+    
   }
 
 
