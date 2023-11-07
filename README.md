@@ -3,7 +3,9 @@
 ## This is a random password generator built using Javascript functions, if-else conditions, prompts, and alerts.
 
 ## Screenshot
-![Alt text](Password-Generator.png)
+![Alt text](assets/Password-Generator.png)
+ 
+
 
 
 
